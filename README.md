@@ -55,6 +55,7 @@ php framework/yiic.php webapp ./testdrive
 
 ### ejemplo para construir la imagen: 
 ```bash
+docker exec -ti container-php-7.3-yii-1.1.14 bash
 docker build --no-cache --progress=plain --tag drvelasquezq/php-7.3-yii-1.1.14:latest . > output-build-image/output.log 2>&1
 ```
 
