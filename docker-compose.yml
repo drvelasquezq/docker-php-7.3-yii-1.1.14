@@ -1,0 +1,17 @@
+services:
+  php-7.3-yii-1.1.14:
+    image: drvelasquezq/php-7.3-yii-1.1.14:latest
+    container_name: container-php-7.3-yii-1.1.14
+    volumes:
+      - "./var/www/yii-1.1.14:/var/www/yii-1.1.14"
+    # para ver logs de apache
+      - "./var/log/apache2:/var/log/apache2"
+    # log de php xdebug
+    #  - "./var/log/xdebug:/var/log/xdebug"
+    #arranque
+      - "./scripts/run.sh:/scripts/run.sh"
+      # para que cuando el contenedor se acceda con vscode directamente ya tenga las extensiones instaladas de php
+      - "./root:/root"
+    command: ["sh", "/scripts/run.sh"]
+    ports:
+      - "8051:80"
